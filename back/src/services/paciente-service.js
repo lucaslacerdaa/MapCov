@@ -1,6 +1,6 @@
 const pacienteRepo = require("../repositories/paciente-repo");
 
-class ProductService {
+class PacienteService {
   add(paciente) {
     return pacienteRepo.save(paciente);
   }
@@ -30,4 +30,4 @@ class ProductService {
   }
 }
 
-module.exports = ProductService;
+module.exports = PacienteService;
