@@ -4,14 +4,13 @@
         
         <label for="" id="titulo"> Usuário </label>            
         <input type="text" id="text-box" v-model="user"> 
-
         <label for="" id="titulo">Senha</label>
         <input type="password" id="text-box" v-model="password">
 
         <label id="subtitle">Esqueci a senha</label>
 
         <button id="entrar" @click= validatorsLogin()>Entrar</button>
-        <button id="Cadastrar" @click=" this.$router.go(-1) ">Registrar-se</button>
+        <button id="Cadastrar" @click=" this.$router.push('/cadastro') ">Registrar-se</button>
 
         <p v-if="errors.length">
                 <b>Por favor, corrija o(s) seguinte(s) erro(s):</b>

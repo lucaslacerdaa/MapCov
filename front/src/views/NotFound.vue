@@ -4,10 +4,9 @@
         <button @click=" this.$router.go(-1) ">Retornar</button>
     </div>
 </template>
-
 <script>
 export default {
-    name: 'Contrucao',
+    name: 'NotFound',
 }
 </script>
 <style>

@@ -15,7 +15,7 @@
             <label id="subtitle">Precisa de ajuda</label>
 
             <button id="entrar" @click= validatorsSignUp()>Enviar</button>
-            <button id="Cadastrar" @click=" this.$router.go(-1) ">Voltar</button>
+            <button id="Cadastrar" @click=" this.$router.push('/') ">Voltar</button>
 
             <div v-if="errors.length" id ="Errors">
                 <b id="titleError">Corrija o(s) seguinte(s) dado(s):</b>
