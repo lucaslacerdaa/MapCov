@@ -4,7 +4,7 @@
       <Info/>
     </div>
     <div id="card">
-      <CardLoginComponent />
+      <CardLoginComponent/>
     </div>
   </div>
 </template>

@@ -11,7 +11,7 @@
         <label id="subtitle">Esqueci a senha</label>
 
         <button id="entrar" @click= validatorsLogin()>Entrar</button>
-        <button id="Cadastrar" @click=" this.$router.go(-1) ">Registrar-se</button>
+        <button id="Cadastrar" @click=" this.$router.push('/cadastro') ">Registrar-se</button>
 
         <p v-if="errors.length">
                 <b>Por favor, corrija o(s) seguinte(s) erro(s):</b>
