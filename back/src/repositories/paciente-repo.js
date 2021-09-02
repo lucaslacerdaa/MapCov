@@ -40,6 +40,23 @@ exports.findOne = async (id) => {
   return result;
 };
 
+exports.findByNum = async (num) => {
+  const result = await pool.query("SELECT * FROM pacientes;");
+  const resul = [];
+  if(num > 0){
+    for(let i = 0; i < num ; i++){
+      resul.push(result.rows[i]);
+    }
+    return resul;
+  }
+};
+
+exports.findByEstado = async (estado) => {
+const result = await pool.query("SELECT * FROM pacientes WHERE estado=$1;", [
+  estado]);
+return result.rows;
+};
+
 exports.update = async (id, paciente) => {
   return await Paciente.update(
     {

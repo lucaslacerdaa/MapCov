@@ -1,40 +1,21 @@
 const express = require("express");
 const router = express.Router();
-const jsftp = require("jsftp");
-const fs = require("fs");
-const formidable = require("formidable");
-require("dotenv/config");
+const multer = require("multer");
+const controller = require("../controllers/upload-controller");
 
-const ftp = new jsftp({
-  host: process.env.FTP_HOST,
-  port: process.env.FTP_PORT,
-  user: process.env.FTP_USER,
-  pass: process.env.FTP_PASS,
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    let obj = JSON.parse(req.body.obj);
+    cb(null, "./public/uploads/" + obj.resource);
+  },
+  filename: function (req, file, cb) {
+    let obj = JSON.parse(req.body.obj);
+    cb(null, obj.id.toString());
+  },
 });
 
-router.post("/", (req, res) => {
-  const form = new formidable.IncomingForm();
-  form.parse(req, (err, fields, files) => {
-    fs.readFile(files.file.path, function (err, buffer) {
-      if (err) {
-        console.error(err);
-      } else {
-        let obj = JSON.parse(fields.obj);
-        ftp.put(
-          buffer,
-          "public_html/uploads/" + obj.resource + "/" + obj.id,
-          (err) => {
-            if (!err) {
-              console.log("File transferred successfully!");
-            }
-            console.log(err);
-          }
-        );
-      }
-    });
+const upload = multer({ storage: storage });
 
-    res.end();
-  });
-});
+router.post("/", upload.single("file"), controller.uploadFile);
 
 module.exports = router;

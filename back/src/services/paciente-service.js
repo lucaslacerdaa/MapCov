@@ -13,6 +13,14 @@ class ProductService {
     return pacienteRepo.findOne(id);
   }
 
+  getByNum(num) {
+    return pacienteRepo.findByNum(num);
+  }
+
+  getByEstado(estado) {
+    return pacienteRepo.findByCargo(estado);
+  }
+
   update(id, paciente) {
     return pacienteRepo.update(id, paciente);
   }

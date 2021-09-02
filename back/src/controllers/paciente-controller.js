@@ -10,12 +10,20 @@ exports.getById = async (req, res) => {
   res.json(await pacienteService.getById(req.params.id));
 };
 
+exports.getByNum = async (req, res) => {
+  res.json(await pacienteService.getByNum(req.query.num));
+};
+
+exports.getByEstado = async (req, res) => {
+  res.json(await pacienteService.getByEstado(req.query.estado));
+};
+
 exports.post = async (req, res) => {
-  if (req.body.name.length < 2 || req.body.price < 0) {
+  if (req.body.nome.length < 2 || req.body.sobrenome < 0) {
     res.status(400).send();
   } else {
     let paciente = await pacienteService.add(
-      new Paciente(req.body.nome, req.body.sobrenome, req.body.cpf, req.body.idade, req.body.peso, req.body.telefone, req.body.email, req.body.rua, req.body.bairro, req.body.cidade, req.body.estado)
+      new Product(req.body.nome, req.body.sobrenome, req.body.cpf, req.body.idade, req.body.peso, req.body.telefone, req.body.email, req.body.rua, req.body.bairro, req.body.cidade, req.body.estado)
     );
 
     if (paciente != null) {

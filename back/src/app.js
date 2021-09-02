@@ -3,16 +3,16 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const sessions = require("express-session");
 require("dotenv/config");
-
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 app.use(cors({ credentials: true, origin: true }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
-
+// Session
 app.use(
   sessions({
     secret: process.env.SECRET,
@@ -21,10 +21,12 @@ app.use(
   })
 );
 
+// Static
 app.use(express.static("public"));
 
+// Routes
 const index = require("./routes/index.js");
-const pacientes = require("./routes/product-route");
+const pacientes = require("./routes/paciente-route");
 const upload = require("./routes/upload-route");
 const users = require("./routes/user-route");
 
@@ -48,6 +50,7 @@ app.use((req, res, next) => {
   });
 });
 
+// Server
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
