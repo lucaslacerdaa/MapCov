@@ -1,6 +1,7 @@
 const db = require("../models");
 const Paciente = db.pacientes;
 const { Op } = require("sequelize");
+const pool = require("../dbs/postgres");
 
 exports.save = async (paciente) => {
   return await Paciente.create({
@@ -29,7 +30,6 @@ exports.findAll = async () => {
   const result = await Paciente.findAll();
   return result;
 };
-
 
 exports.findOne = async (id) => {
   const result = await Paciente.findOne({

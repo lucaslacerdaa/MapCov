@@ -18,7 +18,7 @@ class PacienteService {
   }
 
   getByEstado(estado) {
-    return pacienteRepo.findByCargo(estado);
+    return pacienteRepo.findByEstado(estado);
   }
 
   update(id, paciente) {
