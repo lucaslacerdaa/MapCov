@@ -1,8 +1,10 @@
 <template>
-  Login: <input type="text" name="" id="1" v-model="login" /> <br />
-  Password: <input type="password" name="" id="2" v-model="password" /> <br />
+  <div>
+    <input type="text"     name="" id="1" v-model="login"    placeholder="Usuário"/> <br/>
+    <input type="password" name="" id="2" v-model="password" placeholder="Senha"  /> <br/>
 
-  <button @click="logar">Login</button>
+    <button @click="logar">Login</button>
+  </div>
 </template>
 
 <script>

@@ -1,20 +1,20 @@
 <template>
 
 <div id="container">
-    Nome:      <input type="text" name="" id="1"  v-model="nome"/> <br /><br />
-    Sobrenome: <input type="text" name="" id="2"  v-model="sobrenome"> <br /><br />
-    Idade:     <input type="text" name="" id="3"  v-model="idade"/> <br /><br />
-    Peso:      <input type="text" name="" id="4"  v-model="peso"/> <br /><br />
-    Telefone:  <input type="text" name="" id="6"  v-model="telefone"/> <br /><br />
-    Email:     <input type="text" name="" id="7"  v-model="email"/> <br /><br />
-    CPF:       <input type="text" name="" id="8"  v-model="cpf"/> <br /><br />
-    Rua:       <input type="text" name="" id="9"  v-model="rua"/> <br /><br />
-    Bairro:    <input type="text" name="" id="10" v-model="bairro"/> <br /><br />
-    Cidade:    <input type="text" name="" id="11" v-model="cidade"/> <br /><br />
-    Estado:    <input type="text" name="" id="12" v-model="estado"/> <br /><br />
-    Id:        <input type="text" name="" id="0"  v-model="id"/> <br /><br />
-    Num:        <input type="text" name="" id="0"  v-model="num"/> <br /><br />
-    File:      <input type="file" id="file" ref="file" name="image" /> <br /><br />
+    Nome:      <input type="text" name="" id="1"  v-model="nome"      placeholder=""/> <br/><br/>
+    Sobrenome: <input type="text" name="" id="2"  v-model="sobrenome" placeholder="">  <br/><br/>
+    Idade:     <input type="text" name="" id="3"  v-model="idade"     placeholder=""/> <br/><br/>
+    Peso:      <input type="text" name="" id="4"  v-model="peso"      placeholder=""/> <br/><br/>
+    Telefone:  <input type="text" name="" id="6"  v-model="telefone"  placeholder=""/> <br/><br/>
+    Email:     <input type="text" name="" id="7"  v-model="email"     placeholder=""/> <br/><br/>
+    CPF:       <input type="text" name="" id="8"  v-model="cpf"       placeholder=""/> <br/><br/>
+    Rua:       <input type="text" name="" id="9"  v-model="rua"       placeholder=""/> <br/><br/>
+    Bairro:    <input type="text" name="" id="10" v-model="bairro"    placeholder=""/> <br/><br/>
+    Cidade:    <input type="text" name="" id="11" v-model="cidade"    placeholder=""/> <br/><br/>
+    Estado:    <input type="text" name="" id="12" v-model="estado"    placeholder=""/> <br/><br/>
+    Id:        <input type="text" name="" id="0"  v-model="id"        placeholder=""/> <br/><br/>
+    Num:        <inputtype="text" name="" id="0" v-model="num"        placeholder=""/> <br/><br/>
+    File:      <input type="file" id="file" ref="file" name="image" /> <br/><br/>
 
     Busca em Array: <br />
     {{ Pacientes }} <br /><br />
@@ -22,13 +22,13 @@
     Busca Unitaria: <br />
     {{ paciente }} <br /><br />
 
-    <button @click="inserirPacientes">Inserir</button> <br/><br/>
-    <button @click="putPacientes">Atualizar</button> <br/><br/>
-    <button @click="deletePacientes">Deletar</button> <br/><br/>
-    <button @click="fetchPacientes">Buscar Todos</button> <br/><br/>
-    <button @click="fetchByIdPacientes">Buscar por Id</button> <br/><br/>
-    <button @click="fetchByNumPacientes">Buscar por Quantidade</button> <br/><br/>
-    <button @click="fetchByEstadoPacientes">Buscar por Estado</button> <br/><br/>
+    <button @click="inserirPacientes">        Inserir               </button> <br/><br/>
+    <button @click="putPacientes">            Atualizar             </button> <br/><br/>
+    <button @click="deletePacientes">         Deletar               </button> <br/><br/>
+    <button @click="fetchPacientes">          Buscar Todos          </button> <br/><br/>
+    <button @click="fetchByIdPacientes">      Buscar por Id         </button> <br/><br/>
+    <button @click="fetchByNumPacientes">     Buscar por Quantidade </button> <br/><br/>
+    <button @click="fetchByEstadoPacientes">  Buscar por Estado     </button> <br/><br/>
     
 </div>
 
